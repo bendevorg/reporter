@@ -4,6 +4,7 @@
 */
 
 const constants = require('./constants');
+const _ = require('underscore');
 
 /**
  * Validate if the input is a valid not empty string
@@ -12,7 +13,7 @@ const constants = require('./constants');
  * @return {boolean} - True case the string is valid and false if it is not
 */
 exports.isValidString = stringToValidate => {
-  return String.isString(stringToValidate) && stringToValidate.trim().length > 0;
+  return _.isString(stringToValidate) && stringToValidate.trim().length > 0;
 };
 
 /**
