@@ -37,7 +37,8 @@ module.exports = function(req, res){
     constants.messages.error.UNDEFINED_NAME:data.item.last_occurrence.name.trim();
   let title = data.item.title.trim();
   let moreInfo = constants.messages.info.MORE_INFO + constants.urls.ROLLBAR_PREFIX +
-    data.item.counter + constants.urls.ROLLBAR_SUFFIX + data.item.last_occurrence_id;
+    name + constants.urls.ROLLBAR_MIDDLE + data.item.counter + 
+    constants.urls.ROLLBAR_SUFFIX + data.item.last_occurrence_id;
   let message = {
     message: generateErrorMessage(name, title, moreInfo)
   };

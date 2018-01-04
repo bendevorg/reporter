@@ -20,7 +20,8 @@ module.exports = {
     integer: /^-?\d+$/
   },
   urls: {
-    ROLLBAR_PREFIX: 'https://rollbar.com/guiconti/winston/items/',
+    ROLLBAR_PREFIX: 'https://rollbar.com/guiconti/',
+    ROLLBAR_MIDDLE: '/items/',
     ROLLBAR_SUFFIX: '/occurrences/'
   }
 };
