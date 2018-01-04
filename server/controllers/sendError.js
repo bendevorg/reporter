@@ -36,8 +36,10 @@ module.exports = function(req, res){
   let name = (!data.item.last_occurrence || !validator.isValidString(data.item.last_occurrence.name))?
     constants.messages.error.UNDEFINED_NAME:data.item.last_occurrence.name.trim();
   let title = data.item.title.trim();
+  let moreInfo = constants.messages.info.MORE_INFO + constants.urls.ROLLBAR_PREFIX +
+    data.item.counter + constants.urls.ROLLBAR_SUFFIX + data.item.last_occurrence_id;
   let message = {
-    message: generateErrorMessage(name, title)
+    message: generateErrorMessage(name, title, moreInfo)
   };
   request.post({url: process.env.TELEGRAM_URL + telegram_id, json: message}, (err, htmlInfo, body) => {
     if (err)
@@ -50,6 +52,6 @@ module.exports = function(req, res){
   });
 };
 
-function generateErrorMessage(name, title){
-  return `Error \n[${name}] - ${title}`;
+function generateErrorMessage(name, title, moreInfo){
+  return `Error \n[${name}] - ${title}\n\n${moreInfo}`;
 }

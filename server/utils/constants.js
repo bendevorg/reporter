@@ -12,10 +12,15 @@ module.exports = {
       UNDEFINED_NAME: 'Undefined'
     },
     info: {
-      REPORT_SENT: 'The report was successful sent.'
+      REPORT_SENT: 'The report was successful sent.',
+      MORE_INFO: 'More info at '
     }
   },
   regex:{
     integer: /^-?\d+$/
+  },
+  urls: {
+    ROLLBAR_PREFIX: 'https://rollbar.com/guiconti/winston/items/',
+    ROLLBAR_SUFFIX: '/occurrences/'
   }
 };
